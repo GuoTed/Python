@@ -13,6 +13,9 @@ class Tea:
  
 # using Inheritance 
 class BlackTea(Tea):
+    # class attribute: same value for all instances
+    name = 'BlackTea' 
+    # instance attribute
     def __init__(self, smell, color):
         super().__init__()
         print('Inherit from Tea ->')
@@ -30,7 +33,18 @@ class BlackTea(Tea):
         print('Smell:{}, Color:{} called by BlackTea'.format(self.smell, self.color))
 
 if __name__ == '__main__':
-    t = BlackTea('good', 'red')
-    t.info() # Smell:good, Color:red called by BlackTea
+    t1 = BlackTea('good', 'red')
+    t1.info() # Smell:good, Color:red called by BlackTea
+
+    # check if instance will be the same
+    t2 = BlackTea('good', 'red')
+    print('t1 & t2 are differnt !!') if t1 != t2 else print('t1 & t2 are the same !!')
     
-    
+    # change class atrribute
+    t1.name = 'BlackTea-old'
+    print(t1.name)
+    print(t2.name)
+
+# To-Do-List
+# 1. super() usage
+# 2. Dsign Pattern
