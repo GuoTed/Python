@@ -13,11 +13,11 @@ class Tea:
  
 # using Inheritance 
 class BlackTea(Tea):
-    # class attribute: same value for all instances
+    # class attribute: same default value for all instances
     name = 'BlackTea' 
     # instance attribute
-    def __init__(self, smell, color):
-        super().__init__()
+    def __init__(self, smell, color): # duner method
+        super().__init__() # may hahve problems in multiple inheritance -> please refer MRO List
         print('Inherit from Tea ->')
         super().info() # Smell:none, Color:transparent called by Tea
         print('Init from params ->')
@@ -42,9 +42,11 @@ if __name__ == '__main__':
     
     # change class atrribute
     t1.name = 'BlackTea-old'
-    print(t1.name)
-    print(t2.name)
+    print(t1.name) # BlackTea-old
+    print(t2.name) # BlackTea
 
 # To-Do-List
-# 1. super() usage
+# 1. super() usage (Note, MRO List)
 # 2. Dsign Pattern
+# 3. duner method
+# 4. object composition vs. classical inheritance
